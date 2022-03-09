@@ -61,7 +61,7 @@ public class DepotTest {
 		try {
 
 			cut.add(new EntityIBAN(10, "DE12345"));
-		
+
 		} catch (IndexOutOfBoundsException e) {
 			thrownyn = true;
 		}
@@ -75,6 +75,13 @@ public class DepotTest {
 		cut.add(new EntityIBAN(2, "DE12346"));
 		var result = cut.size();
 		assertTrue(result == 2);
+
+	}
+
+	@Test
+	void sizeTest2() {
+		var result = cut.size();
+		assertTrue(result == 0);
 	}
 
 	// ***************Prüfung Array-Inhalt mit GET************
@@ -99,7 +106,7 @@ public class DepotTest {
 	}
 
 	// ***************Prüfung mit Lambda-Code Array-Inhalt mit GET(out of
-	// Range)************
+	// Range)*********SpringApplication.run***
 	@Test
 	void Depot_get_test3() {
 		cut.add(new EntityIBAN(1, "DE12345"));
@@ -112,9 +119,7 @@ public class DepotTest {
 	// ***************Prüfung mit Lambda-Code Array-Inhalt mit GET(-1)************
 	@Test
 	void Depot_get_test4() {
-		assertThrows(OwnException.class, () -> 
-			cut.get(-1)
-		);
+		assertThrows(OwnException.class, () -> cut.get(-1));
 	}
 
 	@AfterEach

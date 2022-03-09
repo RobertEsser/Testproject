@@ -29,7 +29,7 @@ public class Depot {
 //		if (depotArray[index].getIban() == null) {
 //			throw new OwnException();
 //		}
-		if (index == 0 && size == 0) {
+		if (size == 0) {
 			throw new OwnException();
 		}
 
